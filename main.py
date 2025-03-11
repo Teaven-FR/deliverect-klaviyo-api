@@ -25,7 +25,7 @@ def send_to_klaviyo(email, name, products):
     url = "https://a.klaviyo.com/api/v2/list/{}/subscribe".format(RxhWVZ)
     headers = {"Content-Type": "application/json"}
     payload = {
-        "api_key":KLAVIYO_API_KEY = os.getenv("KLAVIYO_API_KEY")
+        "api_key": KLAVIYO_API_KEY
 
 
         "profiles": [{
