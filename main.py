@@ -22,10 +22,13 @@ async def receive_deliverect_order(request: Request):
     return {"status": "success", "klaviyo_response": klaviyo_response}
 
 def send_to_klaviyo(email, name, products):
-    url = "https://a.klaviyo.com/api/v2/list/{}/subscribe".format(KLAVIYO_LIST_ID)
+    url = "https://a.klaviyo.com/api/v2/list/{}/subscribe".format(RxhWVZ)
     headers = {"Content-Type": "application/json"}
     payload = {
-        "api_key": KLAVIYO_API_KEY,
+        "api_key": import os
+KLAVIYO_API_KEY = os.getenv("KLAVIYO_API_KEY")
+
+
         "profiles": [{
             "email": email,
             "first_name": name.split(" ")[0] if name else "",
