@@ -38,3 +38,10 @@ def send_to_klaviyo(email, name, products):
     response = requests.post(url, json=payload, headers=headers)
     return response.json()
 
+import os
+import uvicorn
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))  # Utilise le port fourni par Railway
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
