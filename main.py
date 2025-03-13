@@ -26,7 +26,8 @@ async def receive_deliverect_order(request: Request):
 
 def send_to_klaviyo(email, name, products):
     """Envoie les infos du client à Klaviyo"""
-    url = f"https://a.klaviyo.com/api/v2/list/{KLAVIYO_LIST_ID}/subscribe"
+    url = "https://a.klaviyo.com/api/lists/{list_id}/relationships/profiles/"
+
     headers = {"Content-Type": "application/json"}
     payload = {
         "api_key": KLAVIYO_API_KEY,
